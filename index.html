@@ -5,12 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Verde Relax – Herbal Stick Journal</title>
-  <meta name="description" content="Verde Relax is a premium herbal stick brand for natural calm and mindful ritual.">
-  <meta name="keywords" content="herbal sticks, Verde Relax, botanical smoking, eco lifestyle, cannabis alternative">
-  <link rel="icon" type="image/png" href="/images/page1_cover.png"/>
-
   <style>
-    * { box-sizing: border-box; }
     body {
       margin: 0;
       background: #f2f2f2;
@@ -72,7 +67,7 @@
   </div>
 
   <div class="container">
-    <img id="page" src="public/images/page1_cover.png" alt="Page" />
+    <img id="page" src="/images/page1_cover.png" alt="Page" />
   </div>
   <div class="controls">
     <button id="prev">Previous</button>
@@ -109,7 +104,7 @@
     const prevBtn = document.getElementById("prev");
 
     function renderPage() {
-      img.src = "public/images/" + pages[lang][index];
+      img.src = "/images/" + pages[lang][index];
       nextBtn.innerText = btnLabels[lang].next;
       prevBtn.innerText = btnLabels[lang].prev;
     }
