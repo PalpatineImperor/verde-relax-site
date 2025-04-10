@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Verde Relax – Herbal Stick Journal</title>
+  <meta name="description" content="Verde Relax is a premium herbal stick brand for natural calm and mindful ritual.">
+  <meta name="keywords" content="herbal sticks, Verde Relax, botanical smoking, eco lifestyle, cannabis alternative">
+  <link rel="icon" type="image/png" href="/images/page1_cover.png"/>
+  <style>
+    body {
+      margin: 0;
+      background: #f2f2f2;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 10px;
+    }
+    .splash {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      color: gold;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      transition: opacity 1s ease;
+    }
+    .splash h1 {
+      animation: glow 2.5s ease-in-out infinite;
+    
+      font-size: 2.5rem;
+      letter-spacing: 6px;
+      margin-bottom: 20px;
+    }
+    .splash button {
+      background: gold;
+      color: #000;
+      font-size: 1.2rem;
+      padding: 10px 24px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .container {
+      width: 100%;
+      max-width: 800px;
+      aspect-ratio: 3 / 2;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      border-radius: 16px;
+      margin-top: 16px;
+    }
+    .container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: opacity 0.5s ease;
+      border-radius: 16px;
+    }
+    .controls {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+    button.page-btn {
+      padding: 10px 20px;
+      font-size: 15px;
+      border: none;
+      background: #111;
+      color: #fff;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .lang-toggle {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+    }
+  
+    @keyframes glow {
+      0% {
+        text-shadow: 0 0 5px #fff, 0 0 10px gold, 0 0 15px gold, 0 0 20px #ffc800;
+        opacity: 0.9;
+      }
+      50% {
+        text-shadow: 0 0 10px #fff, 0 0 15px gold, 0 0 20px gold, 0 0 25px #ffc800;
+        opacity: 1;
+      }
+      100% {
+        text-shadow: 0 0 5px #fff, 0 0 10px gold, 0 0 15px gold, 0 0 20px #ffc800;
+        opacity: 0.9;
+      }
+    }
+    </style>
+</head>
+<body>
+  <div class="splash" id="splash">
+    <h1>VERDE RELAX</h1>
+    <button onclick="hideSplash()">Enter</button>
+  </div>
+
+  <div class="lang-toggle">
+    <button onclick="setLang('en')">EN</button>
+    <button onclick="setLang('es')">ES</button>
+  </div>
+
+  <div class="container">
+    <img id="page" src="/images/page1_cover.png" alt="Page" />
+  </div>
+  <div class="controls">
+    <button id="prev" class="page-btn">Previous</button>
+    <button id="next" class="page-btn">Next</button>
+  </div>
+
+  <script>
+    const splash = document.getElementById("splash");
+    function hideSplash() {
+      splash.classList.add("hidden");
+    }
+    setTimeout(hideSplash, 3000);
+
+    const pages = {
+      en: [
+        "page1_cover.png",
+        "page2_about.png",
+        "page3_product.png",
+        "page4_contact.png",
+        "page5_nature.png"
+      ],
+      es: [
+        "page1_cover.png",
+        "page2_about.png",
+        "page3_product.png",
+        "page4_contact.png",
+        "page5_nature.png"
+      ]
+    };
+
+    const btnLabels = {
+      en: { next: "Next", prev: "Previous" },
+      es: { next: "Siguiente", prev: "Anterior" }
+    }
+
+    let lang = "en";
+    let index = 0;
+    const img = document.getElementById("page");
+    const nextBtn = document.getElementById("next");
+    const prevBtn = document.getElementById("prev");
+
+    function renderPage() {
+      img.src = "/images/" + pages[lang][index];
+      nextBtn.innerText = btnLabels[lang].next;
+      prevBtn.innerText = btnLabels[lang].prev;
+    }
+
+    function next() {
+      index = (index + 1) % pages[lang].length;
+      renderPage();
+    }
+
+    function prev() {
+      index = (index - 1 + pages[lang].length) % pages[lang].length;
+      renderPage();
+    }
+
+    function setLang(l) {
+      lang = l;
+      index = 0;
+      renderPage();
+    }
+
+    nextBtn.onclick = next;
+    prevBtn.onclick = prev;
+    renderPage();
+  </script>
+</body>
+</html>
