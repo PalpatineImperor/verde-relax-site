@@ -4,97 +4,75 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Verde Relax – Ritual Herbal Stick Manufacturer</title>
+  <title>Verde Relax Factory</title>
   <style>
-    html, body {
+    body {
       margin: 0;
       padding: 0;
-      height: 100%;
-      overflow-x: hidden;
       font-family: Arial, sans-serif;
-      background-color: #e5decf;
-      color: gold;
-    }
-    .wrapper {
+      background-color: #121212;
+      color: #d4af37;
       display: flex;
       flex-direction: column;
-      min-height: 100vh;
-    }
-    header, footer {
-      background: #000;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
       text-align: center;
-      padding: 20px;
     }
-    main {
-      flex-grow: 1;
-      padding: 40px 20px;
-      text-align: center;
-      animation: fadeIn 2s ease-in;
+    header {
+      width: 100%;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 15px;
+      position: absolute;
+      top: 0;
+      right: 0;
     }
-    h1, h2 {
-      color: gold;
-    }
-    p {
-      line-height: 1.6;
-      max-width: 800px;
-      margin: 20px auto;
-    }
-    .download-links a {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 24px;
-      background-color: #111;
-      color: gold;
+    header a {
+      color: #d4af37;
       text-decoration: none;
-      border: 1px solid gold;
-      border-radius: 6px;
-      transition: background-color 0.3s ease;
+      font-weight: bold;
     }
-    .download-links a:hover {
-      background-color: gold;
-      color: #000;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes glow {
-      0%, 100% { text-shadow: 0 0 10px gold; }
-      50% { text-shadow: 0 0 20px gold; }
+    .content {
+      max-width: 800px;
+      margin-top: 80px;
     }
     h1 {
-      animation: glow 3s infinite;
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+    button {
+      background-color: transparent;
+      color: #d4af37;
+      border: 2px solid #d4af37;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      background-color: #d4af37;
+      color: #121212;
     }
   </style>
 </head>
 <body>
-  <div class="wrapper">
-    <header>
-      <h1>VERDE RELAX</h1>
-      <p>Ritual Herbal Stick Manufacturer</p>
-    </header>
+  <header>
+    <a href="#">PRODUCTS</a>
+    <a href="#">OEM</a>
+    <a href="#">CONTACT</a>
+  </header>
 
-    <main>
-      <h2>Crafting Calmness, Naturally</h2>
-      <p>Verde Relax is a modern herbal stick factory dedicated to creating a uniquely relaxing experience through artisanal manufacturing and ecological responsibility. Each stick combines premium herbs, futuristic aesthetics, and ancestral relaxation techniques.</p>
-
-      <h2>Our Philosophy</h2>
-      <p>We produce more than just herbal sticks—we cultivate a mindset. Verde Relax invites you to step away from the noise and embrace quiet, style, and a serene connection with your inner self.</p>
-
-      <h2>Quality and Certification</h2>
-      <p>Our products are nicotine-free, non-psychoactive, and comply fully with European standards. Each stick is produced under stringent quality control, ensuring both safety and satisfaction.</p>
-
-      <div class="download-links">
-        <h2>Download Our Manifestos</h2>
-        <a href="Verde_Relax_Manifest_EN.pdf" download>English Manifesto</a>
-        <a href="Verde_Relax_Manifest_ES.pdf" download>Spanish Manifesto</a>
-        <a href="Verde_Relax_Manifests.zip" download>ZIP Archive</a>
-      </div>
-    </main>
-
-    <footer>
-      <p>© 2025 Verde Relax. All rights reserved.</p>
-    </footer>
+  <div class="content">
+    <h1>VERDE RELAX FACTORY</h1>
+    <h2>MANUFACTURER OF HERBAL SMOKING STICKS</h2>
+    <p>We are a full-service manufacturer specializing in herbal smoking sticks made from natural ingredients, including OEM and private label production.</p>
+    <button onclick="window.location.href='#'">LEARN MORE</button>
   </div>
 </body>
 </html>
