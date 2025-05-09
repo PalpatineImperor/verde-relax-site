@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verde Relax Admin</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #0a0a0a;
+      color: #ffd700;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    h1 {
+      margin-bottom: 1rem;
+    }
+    .panel {
+      background: #111;
+      padding: 20px;
+      border: 1px solid #ffd700;
+      border-radius: 8px;
+      min-width: 300px;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    select, input[type="checkbox"] {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ffd700;
+      background: #000;
+      color: #ffd700;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 10px;
+      background: #ffd700;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #e0c040;
+    }
+  </style>
+</head>
+<body>
+  <h1>Verde Relax Admin</h1>
+  <div class="panel">
+    <label for="lang">Language</label>
+    <select id="lang">
+      <option value="en">English</option>
+      <option value="es">Español</option>
+    </select>
+
+    <label for="music">Background Music</label>
+    <input type="checkbox" id="music" checked /> Enable
+
+    <label for="page">Start Page</label>
+    <select id="page">
+      <option value="0">Cover</option>
+      <option value="1">Page 1</option>
+      <option value="2">Page 2</option>
+      <option value="3">Page 3</option>
+      <option value="4">Page 4</option>
+    </select>
+
+    <button onclick="applySettings()">Apply</button>
+  </div>
+
+  <script>
+    function applySettings() {
+      const lang = document.getElementById('lang').value;
+      const music = document.getElementById('music').checked;
+      const page = parseInt(document.getElementById('page').value);
+
+      localStorage.setItem('lang', lang);
+      localStorage.setItem('music', music);
+      localStorage.setItem('page', page);
+
+      alert('Settings saved. Refresh main site to apply.');
+    }
+  </script>
+</body>
+</html>
